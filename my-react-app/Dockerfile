@@ -9,6 +9,8 @@ COPY package-lock.json /srv/app/matheuspadilha/my-react-app/
 
 RUN npm install
 
+RUN npm install cross-env
+
 COPY . /srv/app/matheuspadilha/my-react-app
 
 CMD [ "npm", "start" ]

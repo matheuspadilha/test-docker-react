@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+
+####################################
+# Setup my-react-app 
+####################################
+  my-react-app:
+    build: ./my-react-app
+    environment:
+      - REACT_APP_PORT=${REACT_APP_PORT}
+    expose:
+    - ${REACT_APP_PORT}
+    ports:
+      - ${REACT_APP_PORT}:${REACT_APP_PORT}
+    volumes:
+      - ./my-react-app/src:/srv/app/matheuspadilha/my-react-app/src
+      - ./my-react-app/public:/srv/app/matheuspadilha/my-react-app/public
+    command: npm run start
